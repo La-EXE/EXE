@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>EXE Site</title>
+  <style>
+    body {
+      background-color: #000;
+      color: white;
+      font-family: "Courier New", monospace;
+      margin: 0;
+      padding: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .blinkie-title {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .blinkie-title img {
+      width: 600px;
+      max-width: 100%;
+      height: auto;
+      image-rendering: pixelated;
+    }
+
+    .attached-blinkies {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .attached-blinkies img {
+      height: 40px;
+      image-rendering: pixelated;
+      vertical-align: top;
+    }
+
+    .title-wrapper {
+      flex: 1; /* prend tout l’espace entre le haut et le footer */
+      display: flex;
+      justify-content: center; /* centré horizontalement */
+      align-items: center;     /* centré verticalement */
+    }
+
+    .centered-title {
+      font-size: 36px;
+      color: #FF00FF;
+      text-shadow: 0 0 10px #FF00FF;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    footer {
+      padding: 20px;
+      background-color: #111;
+      border-top: 2px dashed #33FF00;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .footer-image {
+      margin-top: 10px;
+    }
+
+    .footer-image img {
+      height: 30px;
+      image-rendering: pixelated;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Blinkie titre -->
+  <div class="blinkie-title">
+    <img src="exe.gif" alt="EXE blinkie">
+  </div>
+
+  <!-- Blinkies attachés -->
+  <div class="attached-blinkies">
+    <img src="r.gif" alt="r">
+    <img src="n.gif" alt="n">
+    <img src="k.gif" alt="k">
+  </div>
+
+  <!-- Zone centrale avec titre bien centré -->
+  <div class="title-wrapper">
+    <div class="centered-title">🛠️😖 En Construction 😖🛠️</div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    © 2025 - 2025 EXE - All Rights Reserved.
+    <div class="footer-image">
+      <img src="debian.gif" alt="Debian">
+    </div>
+  </footer>
+
+</body>
+</html>
+
