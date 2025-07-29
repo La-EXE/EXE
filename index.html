@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>EXE</title>
+  <title>EXE Site</title>
   <style>
     body {
       background-color: #000;
@@ -15,8 +15,44 @@
       flex-direction: column;
     }
 
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #111;
+      border-bottom: 2px dashed #33FF00;
+    }
+
+    .tab-button {
+      padding: 15px 25px;
+      color: #33FF00;
+      background: none;
+      border: none;
+      font-size: 16px;
+      cursor: pointer;
+      font-weight: bold;
+      text-shadow: 0 0 5px #33FF00;
+    }
+
+    .tab-button:hover,
+    .tab-button.active {
+      background-color: #222;
+      color: #FF00FF;
+      text-shadow: 0 0 8px #FF00FF;
+    }
+
+    .tab-content {
+      display: none;
+      flex: 1;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
     .blinkie-title {
-      margin-top: 50px;
+      margin-top: 30px;
       text-align: center;
     }
 
@@ -28,7 +64,7 @@
     }
 
     .attached-blinkies {
-      margin-top: 30px;
+      margin-top: 10px;
       text-align: center;
     }
 
@@ -36,21 +72,6 @@
       height: 40px;
       image-rendering: pixelated;
       vertical-align: top;
-    }
-
-    .title-wrapper {
-      flex: 1; /* prend tout l’espace entre le haut et le footer */
-      display: flex;
-      justify-content: center; /* centré horizontalement */
-      align-items: center;     /* centré verticalement */
-    }
-
-    .centered-title {
-      font-size: 36px;
-      color: #FF00FF;
-      text-shadow: 0 0 10px #FF00FF;
-      font-weight: bold;
-      text-align: center;
     }
 
     footer {
@@ -73,7 +94,15 @@
 </head>
 <body>
 
-  <!-- Blinkie titre -->
+  <!-- Barre d'onglets -->
+  <nav>
+    <button class="tab-button active" onclick="showTab('accueil')">Accueil</button>
+    <button class="tab-button" onclick="showTab('onglet1')">Onglet 1</button>
+    <button class="tab-button" onclick="showTab('onglet2')">Onglet 2</button>
+    <button class="tab-button" onclick="showTab('onglet3')">Onglet 3</button>
+  </nav>
+
+  <!-- Titre blinkie -->
   <div class="blinkie-title">
     <img src="exe.gif" alt="EXE blinkie">
   </div>
@@ -85,12 +114,28 @@
     <img src="k.gif" alt="k">
   </div>
 
-  <!-- Zone centrale avec titre bien centré -->
-  <div class="title-wrapper">
-    <div class="centered-title">🛠️😖 En Construction 😖🛠️</div>
+  <!-- Contenus des onglets -->
+  <div id="accueil" class="tab-content active">
+    <h2>🛠️😖 En Construction 😖🛠️</h2>
+    <p>...</p>
   </div>
 
-  <!-- Footer -->
+  <div id="onglet1" class="tab-content">
+    <h2>Onglet 1</h2>
+    <p>Onglet 1.</p>
+  </div>
+
+  <div id="onglet2" class="tab-content">
+    <h2>Onglet 2</h2>
+    <p>Onglet 2</p>
+  </div>
+
+  <div id="onglet3" class="tab-content">
+    <h2>Onglet 3</h2>
+    <p>Onglet 3</p>
+  </div>
+
+  <!-- Pied de page -->
   <footer>
     © 2025 - 2025 EXE - All Rights Reserved.
     <div class="footer-image">
@@ -98,6 +143,31 @@
     </div>
   </footer>
 
+  <!-- Script JavaScript -->
+  <script>
+    function showTab(tabId) {
+      // Cacher tous les contenus
+      document.querySelectorAll('.tab-content').forEach(function(content) {
+        content.classList.remove('active');
+      });
+
+      // Retirer l'état actif des boutons
+      document.querySelectorAll('.tab-button').forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+
+      // Afficher l'onglet sélectionné
+      document.getElementById(tabId).classList.add('active');
+
+      // Activer le bouton correspondant
+      const btns = document.querySelectorAll('.tab-button');
+      btns.forEach(btn => {
+        if (btn.textContent.toLowerCase().includes(tabId.replace('onglet', 'onglet ').toLowerCase()) || (tabId === 'accueil' && btn.textContent === 'Accueil')) {
+          btn.classList.add('active');
+        }
+      });
+    }
+  </script>
+
 </body>
 </html>
-
