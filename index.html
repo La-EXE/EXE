@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <title>EXE Site</title>
   <style>
     body {
@@ -31,7 +31,6 @@
       cursor: pointer;
       font-weight: bold;
       text-shadow: 0 0 5px #33FF00;
-      transition: background-color 0.3s ease;
     }
 
     .tab-button:hover,
@@ -73,7 +72,6 @@
       height: 40px;
       image-rendering: pixelated;
       vertical-align: top;
-      cursor: default;
     }
 
     footer {
@@ -91,7 +89,7 @@
     .footer-image img {
       height: 30px;
       image-rendering: pixelated;
-      cursor: pointer;
+      cursor: pointer; /* Indique que c'est cliquable */
     }
 
     /* Styles BSOD */
@@ -112,39 +110,6 @@
       cursor: pointer;
       white-space: pre-wrap;
     }
-
-    /* --- ADAPTATION MOBILE --- */
-    @media (max-width: 600px) {
-      body.mobile nav {
-        flex-direction: column;
-      }
-      body.mobile .tab-button {
-        padding: 20px;
-        font-size: 20px;
-        width: 100%;
-        text-align: center;
-      }
-      body.mobile .tab-content {
-        padding: 20px 10px;
-        font-size: 18px;
-      }
-      body.mobile .blinkie-title img {
-        width: 100%;
-        margin-top: 10px;
-      }
-      body.mobile .attached-blinkies img {
-        height: 50px;
-        margin: 0 5px;
-      }
-      body.mobile footer {
-        font-size: 16px;
-        padding: 15px;
-      }
-      body.mobile #bsod {
-        font-size: 20px;
-        padding: 30px 15px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -159,14 +124,14 @@
 
   <!-- Titre blinkie -->
   <div class="blinkie-title">
-    <img src="exe.gif" alt="EXE blinkie" />
+    <img src="exe.gif" alt="EXE blinkie">
   </div>
 
   <!-- Blinkies attachés -->
   <div class="attached-blinkies">
-    <img src="r.gif" alt="r" />
-    <img src="n.gif" alt="n" />
-    <img src="k.gif" alt="k" />
+    <img src="r.gif" alt="r">
+    <img src="n.gif" alt="n">
+    <img src="k.gif" alt="k">
   </div>
 
   <!-- Contenus des onglets -->
@@ -177,7 +142,7 @@
 
   <div id="onglet1" class="tab-content">
     <h2>Onglet 1</h2>
-    <p>Onglet 1.</p>
+    <p>Onglet 1</p>
   </div>
 
   <div id="onglet2" class="tab-content">
@@ -194,7 +159,7 @@
   <footer>
     © 2025 - 2025 EXE - All Rights Reserved.
     <div class="footer-image">
-      <img src="debian.gif" alt="Debian" id="debian-logo" />
+      <img src="debian.gif" alt="Debian" id="debian-logo">
     </div>
   </footer>
 
@@ -216,6 +181,7 @@ for any Windows updates you might need.
 Press ESC or click anywhere to exit this screen.
   </div>
 
+  <!-- Script JavaScript -->
   <script>
     function showTab(tabId) {
       // Cacher tous les contenus
@@ -240,35 +206,27 @@ Press ESC or click anywhere to exit this screen.
       });
     }
 
-    // Détecter mobile via userAgent
-    function isMobileDevice() {
-      return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-    }
-
-    // Si mobile, ajouter une classe CSS spéciale
-    window.addEventListener('load', () => {
-      if (isMobileDevice()) {
-        document.body.classList.add('mobile');
-      }
-    });
-
+    // Récupérer éléments
     const bsod = document.getElementById('bsod');
     const debianLogo = document.getElementById('debian-logo');
 
+    // Afficher BSOD au clic sur Debian
     debianLogo.addEventListener('click', () => {
       bsod.style.display = 'block';
     });
 
+    // Fermer BSOD avec ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === "Escape") {
         bsod.style.display = 'none';
       }
     });
 
+    // Fermer BSOD au clic dessus (n'importe où)
     bsod.addEventListener('click', () => {
       bsod.style.display = 'none';
     });
   </script>
+
 </body>
 </html>
-
