@@ -68,10 +68,11 @@
       text-align: center;
     }
 
-    .attached-blinkies img {
+    .attached-blinkies a img {
       height: 40px;
       image-rendering: pixelated;
       vertical-align: top;
+      cursor: pointer;
     }
 
     footer {
@@ -89,7 +90,7 @@
     .footer-image img {
       height: 30px;
       image-rendering: pixelated;
-      cursor: pointer; /* Indique que c'est cliquable */
+      cursor: pointer;
     }
 
     /* Styles BSOD */
@@ -127,11 +128,17 @@
     <img src="exe.gif" alt="EXE blinkie">
   </div>
 
-  <!-- Blinkies attachés -->
+  <!-- Blinkies attachés cliquables -->
   <div class="attached-blinkies">
-    <img src="r.gif" alt="r">
-    <img src="n.gif" alt="n">
-    <img src="k.gif" alt="k">
+    <a href="https://www.google.com" target="_blank">
+      <img src="r.gif" alt="r">
+    </a>
+    <a href="https://n2k188.github.io/Soutenir-N2K/" target="_blank">
+      <img src="n.gif" alt="n">
+    </a>
+    <a href="https://www.google.com" target="_blank">
+      <img src="k.gif" alt="k">
+    </a>
   </div>
 
   <!-- Contenus des onglets -->
