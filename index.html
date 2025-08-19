@@ -75,11 +75,10 @@
       cursor: pointer;
     }
 
-    /* 🔧 AJOUT : texte vert discret sous les GIFs */
     .attached-blinkies::after {
       content: "NOUS NE SOMMES PAS DES SCRIPT KIDDIES, MAIS DE VRAI LÉGENDES";
       display: block;
-      color: rgb(51, 255, 0); /* Vert fluo discret */
+      color: rgb(51, 255, 0);
       font-size: 12px;
       margin-top: 3px;
       font-family: monospace;
@@ -104,7 +103,6 @@
       cursor: pointer;
     }
 
-    /* Styles BSOD */
     #bsod {
       display: none;
       position: fixed;
@@ -122,6 +120,23 @@
       cursor: pointer;
       white-space: pre-wrap;
     }
+
+    /* 🔧 Styles pour l’onglet Soutien */
+    .support-item {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+    .support-item img {
+      width: 30px;
+      height: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+      image-rendering: pixelated;
+    }
+    .support-item span {
+      color: #33FF00;
+      font-weight: bold;
+    }
   </style>
 </head>
 <body>
@@ -130,6 +145,7 @@
   <nav>
     <button class="tab-button active" onclick="showTab('accueil')">Accueil</button>
     <button class="tab-button" onclick="showTab('onglet3')">Rejoins-nous</button>
+    <button class="tab-button" onclick="showTab('soutien')">Soutien</button>
   </nav>
 
   <!-- Titre blinkie -->
@@ -164,7 +180,23 @@
     <p>T’es fou ? T’as des skills ?
     <p>Bienvenue.
     <p>Sinon, trace ta route.
-<p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
+    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
+  </div>
+
+  <div id="soutien" class="tab-content">
+    <h2>Soutenir la EXE</h2>
+    <div class="support-item">
+      <img src="bitcoin.jpg" alt="Bitcoin">
+      <span>Bitcoin :</span> bc1qz87u4hr6pv8yzq96h6vjcutz3nrgw06gkdxzvw
+    </div>
+    <div class="support-item">
+      <img src="ethereum.jpg" alt="Ethereum">
+      <span>Ethereum :</span> 0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40
+    </div>
+    <div class="support-item">
+      <img src="solana.jpg" alt="Solana">
+      <span>Solana :</span> FgvSNeEGXiuvBBUPgEJ8M5M4oW739AKMh8GmSZtY2qPK
+    </div>
   </div>
 
   <!-- Pied de page -->
@@ -196,45 +228,39 @@ Press ESC or click anywhere to exit this screen.
   <!-- Script JavaScript -->
   <script>
     function showTab(tabId) {
-      // Cacher tous les contenus
       document.querySelectorAll('.tab-content').forEach(function(content) {
         content.classList.remove('active');
       });
 
-      // Retirer l'état actif des boutons
       document.querySelectorAll('.tab-button').forEach(function(btn) {
         btn.classList.remove('active');
       });
 
-      // Afficher l'onglet sélectionné
       document.getElementById(tabId).classList.add('active');
 
-      // Activer le bouton correspondant
       const btns = document.querySelectorAll('.tab-button');
       btns.forEach(btn => {
-        if (btn.textContent.toLowerCase().includes(tabId.replace('onglet', 'onglet ').toLowerCase()) || (tabId === 'accueil' && btn.textContent === 'Accueil')) {
+        if ((tabId === 'accueil' && btn.textContent === 'Accueil') ||
+            (tabId === 'onglet3' && btn.textContent === 'Rejoins-nous') ||
+            (tabId === 'soutien' && btn.textContent === 'Soutien')) {
           btn.classList.add('active');
         }
       });
     }
 
-    // Récupérer éléments
     const bsod = document.getElementById('bsod');
     const debianLogo = document.getElementById('debian-logo');
 
-    // Afficher BSOD au clic sur Debian
     debianLogo.addEventListener('click', () => {
       bsod.style.display = 'block';
     });
 
-    // Fermer BSOD avec ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === "Escape") {
         bsod.style.display = 'none';
       }
     });
 
-    // Fermer BSOD au clic dessus (n'importe où)
     bsod.addEventListener('click', () => {
       bsod.style.display = 'none';
     });
