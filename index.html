@@ -1,314 +1,56 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html  >
 <head>
+  <!-- Site made with Mobirise Website Builder v6.1.4, https://mobirise.com -->
   <meta charset="UTF-8">
-  <title>EXE Site</title>
-  <style>
-    body {
-      background-color: #000;
-      color: white;
-      font-family: "Courier New", monospace;
-      margin: 0;
-      padding: 0;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="generator" content="Mobirise v6.1.4, mobirise.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+  <link rel="shortcut icon" href="assets/images/logo5.png" type="image/x-icon">
+  <meta name="description" content="">
+  
+  
+  <title>Home</title>
+  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/socicon/css/styles.css">
+  <link rel="stylesheet" href="assets/theme/css/style.css">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;700&display=swap&display=swap"></noscript>
+  <link rel="preload" as="style" href="assets/mobirise/css/mbr-additional.css?v=wwNtyB"><link rel="stylesheet" href="assets/mobirise/css/mbr-additional.css?v=wwNtyB" type="text/css">
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #111;
-      border-bottom: 2px dashed #33FF00;
-    }
-
-    .tab-button {
-      padding: 15px 25px;
-      color: #33FF00;
-      background: none;
-      border: none;
-      font-size: 16px;
-      cursor: pointer;
-      font-weight: bold;
-      text-shadow: 0 0 5px #33FF00;
-    }
-
-    .tab-button:hover,
-    .tab-button.active {
-      background-color: #222;
-      color: #FF00FF;
-      text-shadow: 0 0 8px #FF00FF;
-    }
-
-    .tab-content {
-      display: none;
-      flex: 1;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .tab-content.active {
-      display: block;
-    }
-
-    .blinkie-title {
-      margin-top: 30px;
-      text-align: center;
-    }
-
-    .blinkie-title img {
-      width: 600px;
-      max-width: 100%;
-      height: auto;
-      image-rendering: pixelated;
-    }
-
-    .attached-blinkies {
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    .attached-blinkies a img {
-      height: 40px;
-      image-rendering: pixelated;
-      vertical-align: top;
-      cursor: pointer;
-    }
-
-    .attached-blinkies::after {
-      content: "NOUS NE SOMMES PAS DES SCRIPT KIDDIES, MAIS DE VRAI LÉGENDES";
-      display: block;
-      color: rgb(51, 255, 0);
-      font-size: 12px;
-      margin-top: 3px;
-      font-family: monospace;
-      text-align: center;
-    }
-
-    footer {
-      padding: 20px;
-      background-color: #111;
-      border-top: 2px dashed #33FF00;
-      font-size: 14px;
-      text-align: center;
-    }
-
-    .footer-image {
-      margin-top: 10px;
-    }
-
-    .footer-image img {
-      height: 30px;
-      image-rendering: pixelated;
-      cursor: pointer;
-    }
-
-    #bsod {
-      display: none;
-      position: fixed;
-      top: 0; left: 0;
-      width: 100vw;
-      height: 100vh;
-      background: #0000AA;
-      color: white;
-      font-family: monospace;
-      font-size: 16px;
-      padding: 40px;
-      box-sizing: border-box;
-      z-index: 9999;
-      user-select: none;
-      cursor: pointer;
-      white-space: pre-wrap;
-    }
-
-    /* 🔧 Styles pour l’onglet Soutien */
-    .support-item {
-      margin: 20px 0;
-      font-size: 16px;
-    }
-    .support-item img {
-      width: 30px;
-      height: 30px;
-      vertical-align: middle;
-      margin-right: 10px;
-      image-rendering: pixelated;
-    }
-    .support-item span {
-      color: #33FF00;
-      font-weight: bold;
-    }
-  </style>
+  
+  
+  
 </head>
 <body>
-
-  <!-- Barre d'onglets -->
-  <nav>
-  <button class="tab-button active" onclick="showTab('accueil')">Accueil</button>
-  <button class="tab-button" onclick="showTab('onglet3')">Rejoins-nous</button>
-  <button class="tab-button" onclick="showTab('shop')">Shop</button>
-  <button class="tab-button" onclick="showTab('soutien')">Soutien</button>
-</nav>
-
-<!-- Contenus des onglets -->
-<div id="shop" class="tab-content">
-  <h2>Shop</h2>
-    <p style="color: #33FF00; font-weight: bold;">
-    Pour payer, il faut aller sur notre Discord 💸
-    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">Via ce Lien</a></p>
-        <p style="color: #33FF00; font-weight: bold;">
-    et crée un ticket en incluant l'id de l'article que vous voulez acheter</p>
-   <p style="color: #33FF00; font-weight: bold;">
-   (TOUT PAIEMENT DOIT ÊTRE FAIT EN CRYPTO)</p>
-  </p>
-  <div class="shop-container" style="display: flex; overflow-x: auto; gap: 20px; padding: 20px;">
-  <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #33FF00; text-align: center;">
-    <img src="IMG_8814.jpeg" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
-    <p style="margin: 0; font-weight: bold;">GUIDE ULTIME POUR ÊTRE UN TROLLEUR</p>
-    <p style="margin: 0;">Prix : 1.80€</p>
-    <p style="margin: 0;">ID : 1</p>
-</div>
-    <!-- Tu peux dupliquer cette div pour ajouter d'autres articles -->
-  </div>
-</div>
-
-  <!-- Titre blinkie -->
-  <div class="blinkie-title">
-    <img src="exe.gif" alt="EXE blinkie">
-  </div>
-
-  <!-- Blinkies attachés cliquables -->
-  <div class="attached-blinkies">
-    <a href="https://www.google.com" target="_blank">
-      <img src="r.gif" alt="r">
-    </a>
-    <a href="https://guns.lol/noneed2know" target="_blank">
-      <img src="n.gif" alt="n">
-    </a>
-    <a href="https://www.google.com" target="_blank">
-      <img src="k.gif" alt="k">
-    </a>
-  </div>
-
-  <!-- Contenus des onglets -->
-  <div id="accueil" class="tab-content active">
-    <h2>Qui sommes nous ?</h2>
-    <p>Une team complètement tarée.
-    <p>On cheat, on hack, on troll — ON EST DES VRAI MALADES
-    <p>On frappe, on s'infiltre, on explose tout.
-    <p>Le chaos est notre terrain de jeu, et on se régale.</p>
-  </div>
-
-  <div id="onglet3" class="tab-content">
-    <h2>Rejoins-nous</h2>
-    <p>T’es fou ? T’as des skills ?
-    <p>Bienvenue.
-    <p>Sinon, trace ta route.
-    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
-  </div>
-
-  <div id="soutien" class="tab-content">
-    <h2>Soutenir la EXE</h2>
-    <div class="support-item">
-      <img src="bitcoin.jpg" alt="Bitcoin">
-      <span>Bitcoin :</span> bc1qz87u4hr6pv8yzq96h6vjcutz3nrgw06gkdxzvw
+  
+  <section data-bs-version="5.1" class="countdown1 cid-uXhr4durfP" id="countdown1-2">
+    
+    
+    
+    
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h3 class="mbr-section-title mb-5 align-center mbr-fonts-style display-1">
+                    <strong>LA EXE<br>Coming soon</strong></h3>
+                
+                <div class="countdown-cont align-center mb-5 display-1">
+                    <div title="Days" class="daysCountdown col-xs-3 col-sm-3 col-md-3 display-5"></div>
+                    <div title="Hours" class="hoursCountdown col-xs-3 col-sm-3 col-md-3 display-5"></div>
+                    <div title="Minutes" class="minutesCountdown col-xs-3 col-sm-3 col-md-3 display-5"></div>
+                    <div title="Seconds" class="secondsCountdown col-xs-3 col-sm-3 col-md-3 display-5"></div>
+                    <div class="countdown" data-due-date="2025/09/20"></div>
+                </div>
+                <p class="mbr-text mb-5 align-center mbr-fonts-style display-5">
+                    Bientôt disponible</p>
+                
+                
+            </div>
+        </div>
     </div>
-    <div class="support-item">
-      <img src="ethereum.jpg" alt="Ethereum">
-      <span>Ethereum :</span> 0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40
-    </div>
-    <div class="support-item">
-      <img src="solana.jpg" alt="Solana">
-      <span>Solana :</span> FgvSNeEGXiuvBBUPgEJ8M5M4oW739AKMh8GmSZtY2qPK
-    </div>
-  </div>
-
-  <!-- Pied de page -->
-  <footer>
-    © 2025 - 2025 EXE - All Rights Reserved.
-    <div class="footer-image">
-      <img src="debian.gif" alt="Debian" id="debian-logo">
-    </div>
-  </footer>
-
-  <!-- Faux BSOD -->
-  <div id="bsod">
-*** STOP: 0x000000D3 (0x00000000, 0x00000002, 0x00000001, 0xF86B1234)
-DRIVER_IRQL_NOT_LESS_OR_EQUAL
-
-*** Address F86B1234 base at F86B0000, DateStamp 3dd991eb - debian.sys
-
-If this is the first time you've seen this Stop error screen,
-restart your computer. If this screen appears again, follow
-these steps:
-
-Check to make sure any new hardware or software is properly installed.
-If this is a new installation, ask your hardware or software manufacturer
-for any Windows updates you might need.
-
-Press ESC or click anywhere to exit this screen.
-  </div>
-
-  <!-- Script JavaScript -->
-  <script>
-    function showTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(function(content) {
-        content.classList.remove('active');
-      });
-
-      document.querySelectorAll('.tab-button').forEach(function(btn) {
-        btn.classList.remove('active');
-      });
-
-      document.getElementById(tabId).classList.add('active');
-
-      const btns = document.querySelectorAll('.tab-button');
-      btns.forEach(btn => {
-        if ((tabId === 'accueil' && btn.textContent === 'Accueil') ||
-            (tabId === 'onglet3' && btn.textContent === 'Rejoins-nous') ||
-            (tabId === 'soutien' && btn.textContent === 'Soutien')) {
-          btn.classList.add('active');
-        }
-      });
-    }
-
-    const bsod = document.getElementById('bsod');
-    const debianLogo = document.getElementById('debian-logo');
-
-    debianLogo.addEventListener('click', () => {
-      bsod.style.display = 'block';
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === "Escape") {
-        bsod.style.display = 'none';
-      }
-    });
-
-    bsod.addEventListener('click', () => {
-      bsod.style.display = 'none';
-    });
-  </script>
-
+</section><section class="display-7" style="padding: 0;align-items: center;justify-content: center;flex-wrap: wrap;    align-content: center;display: flex;position: relative;height: 4rem;"><a href="https://mobiri.se/4219158" style="flex: 1 1;height: 4rem;position: absolute;width: 100%;z-index: 1;"><img alt="" style="height: 4rem;" src="data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw=="></a><p style="margin: 0;text-align: center;" class="display-7">&#8204;</p><a style="z-index:1" href="https://mobirise.com/html-builder.html">HTML Generator</a></section><script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>  <script src="assets/smoothscroll/smooth-scroll.js"></script>  <script src="assets/ytplayer/index.js"></script>  <script src="assets/countdown/countdown.js"></script>  <script src="assets/theme/js/script.js"></script>  
+  
+  
 </body>
 </html>
-
-  <!-- Ceci ne s'affichera pas. Structure du Shop -->
-     <!--
-  <div class="shop-container" style="display: flex; overflow-x: auto; gap: 20px; padding: 20px;">
-    -->
-
-  <!-- Ceci ne s'affichera pas. Shop Item -->
-  <!--
-  <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #33FF00; text-align: center;">
-    <img src="a1.jpg" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
-    <p style="margin: 0; font-weight: bold;">Nom</p>
-    <p style="margin: 0;">Prix : 0.00€</p>
-    <p style="margin: 0;">ID : 0</p>
-</div>
-    -->
-
-      <!-- Ceci ne s'affichera pas. Shop en construction -->
-  <!--
-    <p>🚧 Le Shop est en cours de construction 🚧</p>
-</div>
-    -->
