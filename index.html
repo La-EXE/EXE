@@ -6,38 +6,41 @@
   <style>
     body {
       background-color: #000;
-      color: white;
+      color: #FFA500;
       font-family: "Courier New", monospace;
       margin: 0;
       padding: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      background-image: radial-gradient(circle at center, #200000 0%, #000 90%);
     }
 
     nav {
       display: flex;
       justify-content: center;
-      background-color: #111;
-      border-bottom: 2px dashed #33FF00;
+      background-color: #150000;
+      border-bottom: 2px dashed #FF4500;
+      box-shadow: 0 0 10px #FF4500;
     }
 
     .tab-button {
       padding: 15px 25px;
-      color: #33FF00;
+      color: #FF8C00;
       background: none;
       border: none;
       font-size: 16px;
       cursor: pointer;
       font-weight: bold;
-      text-shadow: 0 0 5px #33FF00;
+      text-shadow: 0 0 5px #FF4500;
+      transition: all 0.3s ease;
     }
 
     .tab-button:hover,
     .tab-button.active {
-      background-color: #222;
+      background-color: #330000;
       color: #FF00FF;
-      text-shadow: 0 0 8px #FF00FF;
+      text-shadow: 0 0 10px #FF00FF, 0 0 20px #FF4500;
     }
 
     .tab-content {
@@ -45,10 +48,17 @@
       flex: 1;
       padding: 40px 20px;
       text-align: center;
+      color: #FFA500;
     }
 
     .tab-content.active {
       display: block;
+      animation: flicker 1s infinite alternate;
+    }
+
+    @keyframes flicker {
+      0% { text-shadow: 0 0 5px #FF4500; }
+      100% { text-shadow: 0 0 12px #FF6347, 0 0 20px #FF4500; }
     }
 
     .blinkie-title {
@@ -57,10 +67,11 @@
     }
 
     .blinkie-title img {
-      width: 600px;
-      max-width: 100%;
+      width: 200px; /* 🔥 Taille réduite */
+      max-width: 90%;
       height: auto;
       image-rendering: pixelated;
+      filter: drop-shadow(0 0 15px #FF4500);
     }
 
     .attached-blinkies {
@@ -73,24 +84,34 @@
       image-rendering: pixelated;
       vertical-align: top;
       cursor: pointer;
+      filter: hue-rotate(20deg) drop-shadow(0 0 10px #FF4500);
+      transition: transform 0.2s ease, filter 0.2s ease;
+    }
+
+    .attached-blinkies a img:hover {
+      transform: scale(1.1) rotate(3deg);
+      filter: hue-rotate(60deg) drop-shadow(0 0 20px #FF00FF);
     }
 
     .attached-blinkies::after {
       content: "NOUS NE SOMMES PAS DES SCRIPT KIDDIES, MAIS DE VRAI LÉGENDES";
       display: block;
-      color: rgb(51, 255, 0);
+      color: #FF4500;
       font-size: 12px;
       margin-top: 3px;
       font-family: monospace;
       text-align: center;
+      text-shadow: 0 0 5px #FF0000;
     }
 
     footer {
       padding: 20px;
-      background-color: #111;
-      border-top: 2px dashed #33FF00;
+      background-color: #150000;
+      border-top: 2px dashed #FF4500;
       font-size: 14px;
       text-align: center;
+      box-shadow: 0 0 10px #FF4500;
+      color: white;
     }
 
     .footer-image {
@@ -101,6 +122,7 @@
       height: 30px;
       image-rendering: pixelated;
       cursor: pointer;
+      filter: hue-rotate(30deg) drop-shadow(0 0 10px #FF4500);
     }
 
     #bsod {
@@ -109,8 +131,8 @@
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background: #0000AA;
-      color: white;
+      background: #220022;
+      color: #FF6347;
       font-family: monospace;
       font-size: 16px;
       padding: 40px;
@@ -119,12 +141,14 @@
       user-select: none;
       cursor: pointer;
       white-space: pre-wrap;
+      text-shadow: 0 0 10px #FF4500;
     }
 
     /* 🔧 Styles pour l’onglet Soutien */
     .support-item {
       margin: 20px 0;
       font-size: 16px;
+      color: #FFA500;
     }
     .support-item img {
       width: 30px;
@@ -132,9 +156,10 @@
       vertical-align: middle;
       margin-right: 10px;
       image-rendering: pixelated;
+      filter: hue-rotate(40deg) drop-shadow(0 0 10px #FF4500);
     }
     .support-item span {
-      color: #33FF00;
+      color: #FF4500;
       font-weight: bold;
     }
   </style>
@@ -152,42 +177,39 @@
 <!-- Contenus des onglets -->
 <div id="shop" class="tab-content">
   <h2>Shop</h2>
-    <p style="color: #33FF00; font-weight: bold;">
+    <p style="color: #FFA500; font-weight: bold;">
     Pour payer, il faut aller sur notre Discord 💸
-    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">Via ce Lien</a></p>
-        <p style="color: #33FF00; font-weight: bold;">
+    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#FFA500; text-decoration: underline;">Via ce Lien</a></p>
+        <p style="color: #FFA500; font-weight: bold;">
     et crée un ticket en incluant l'id de l'article que vous voulez acheter</p>
   </p>
-  <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #33FF00; text-align: center;">
+  <div class="shop-item" style="width: 160px; background-color: #150000; padding: 10px; border: 2px dashed #FF4500; text-align: center; box-shadow: 0 0 10px #FF4500;">
     <img src="a1.jpg" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
     <p style="margin: 0; font-weight: bold;">GUIDE ULTIME POUR ÊTRE UN TROLLER</p>
     <p style="margin: 0;">Prix : 1.80€</p>
     <p style="margin: 0;">ID : 1</p>
 </div>
 </div>
-    <!-- Tu peux dupliquer cette div pour ajouter d'autres articles -->
-  </div>
-</div>
 
   <!-- Titre blinkie -->
   <div class="blinkie-title">
-    <img src="exe.gif" alt="EXE blinkie">
+    <img src="exe-hwn.png" alt="EXE blinkie">
   </div>
 
   <!-- Blinkies attachés cliquables -->
   <div class="attached-blinkies">
     <a href="https://www.google.com" target="_blank">
-      <img src="r.gif" alt="r">
+      <img src="r-hwn.png" alt="r">
     </a>
     <a href="https://guns.lol/noneed2know/" target="_blank">
-      <img src="n.gif" alt="n">
+      <img src="n-hwn.png" alt="n">
     </a>
     <a href="https://www.google.com" target="_blank">
-      <img src="k.gif" alt="k">
+      <img src="k-hwn.png" alt="k">
     </a>
     <br>
     <a href="https://www.google.com" target="_blank">
-      <img src="o.gif" alt="o" style="margin-top: 5px;">
+      <img src="o-hwn.png" alt="o" style="margin-top: 5px;">
     </a>
   </div>
 
@@ -205,7 +227,7 @@
     <p>T’es fou ? T’as des skills ?
     <p>Bienvenue.
     <p>Sinon, trace ta route.
-    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
+    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#FFA500; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
   </div>
 
   <div id="soutien" class="tab-content">
@@ -228,7 +250,7 @@
   <footer>
     © 2025 - 2025 EXE - All Rights Reserved.
     <div class="footer-image">
-      <img src="debian.gif" alt="Debian" id="debian-logo">
+      <img src="debian-hwn.gif" alt="Debian" id="debian-logo">
     </div>
   </footer>
 
@@ -267,7 +289,8 @@ Press ESC or click anywhere to exit this screen.
       btns.forEach(btn => {
         if ((tabId === 'accueil' && btn.textContent === 'Accueil') ||
             (tabId === 'onglet3' && btn.textContent === 'Rejoins-nous') ||
-            (tabId === 'soutien' && btn.textContent === 'Soutien')) {
+            (tabId === 'soutien' && btn.textContent === 'Soutien') ||
+            (tabId === 'shop' && btn.textContent === 'Shop')) {
           btn.classList.add('active');
         }
       });
@@ -293,24 +316,3 @@ Press ESC or click anywhere to exit this screen.
 
 </body>
 </html>
-
-  <!-- Ceci ne s'affichera pas. Structure du Shop -->
-     <!--
-  <div class="shop-container" style="display: flex; overflow-x: auto; gap: 20px; padding: 20px;">
-    -->
-
-  <!-- Ceci ne s'affichera pas. Shop Item -->
-  <!--
-  <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #33FF00; text-align: center;">
-    <img src="a1.jpg" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
-    <p style="margin: 0; font-weight: bold;">Nom</p>
-    <p style="margin: 0;">Prix : 0.00€</p>
-    <p style="margin: 0;">ID : 0</p>
-</div>
-    -->
-
-      <!-- Ceci ne s'affichera pas. Shop en construction -->
-  <!--
-    <p>🚧 Le Shop est en cours de construction 🚧</p>
-</div>
-    -->
