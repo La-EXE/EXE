@@ -6,41 +6,40 @@
   <style>
     body {
       background-color: #000;
-      color: #00BFFF;
+      color: white;
       font-family: "Courier New", monospace;
       margin: 0;
       padding: 0;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      background-image: radial-gradient(circle at center, #200000 0%, #000 90%);
     }
 
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #150000;
-      border-bottom: 2px dashed #00BFFF;
-      box-shadow: 0 0 10px #00BFFF;
-    }
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* centre les boutons verticalement */
+  background-color: #111;
+  border-bottom: none; /* supprime la ligne bleue */
+}
+
 
     .tab-button {
       padding: 15px 25px;
-      color: #00BFFF;
+      color: #4da6ff; /* Bleu */
       background: none;
       border: none;
       font-size: 16px;
       cursor: pointer;
       font-weight: bold;
-      text-shadow: 0 0 5px #00BFFF;
-      transition: all 0.3s ease;
+      text-shadow: 0 0 5px #4da6ff; /* Glow bleu */
     }
 
     .tab-button:hover,
     .tab-button.active {
-      background-color: #330000;
-      color: #007BFF;
-      text-shadow: 0 0 10px #00BFFF, 0 0 20px #FF4500;
+      background-color: #222;
+      color: #FF0000; /* Rouge */
+      text-shadow: 0 0 8px #FF0000; /* Glow rouge */
     }
 
     .tab-content {
@@ -48,17 +47,10 @@
       flex: 1;
       padding: 40px 20px;
       text-align: center;
-      color: #00BFFF;
     }
 
     .tab-content.active {
       display: block;
-      animation: flicker 1s infinite alternate;
-    }
-
-    @keyframes flicker {
-      0% { text-shadow: 0 0 5px #00BFFF; }
-      100% { text-shadow: 0 0 12px #00BFFF, 0 0 20px #FF4500; }
     }
 
     .blinkie-title {
@@ -67,11 +59,10 @@
     }
 
     .blinkie-title img {
-      width: 600px; /* 🔥 Taille réduite */
-      max-width: 90%;
+      width: 900px;
+      max-width: 100%;
       height: auto;
       image-rendering: pixelated;
-      filter: drop-shadow(0 0 15px #00BFFF);
     }
 
     .attached-blinkies {
@@ -84,34 +75,24 @@
       image-rendering: pixelated;
       vertical-align: top;
       cursor: pointer;
-      filter: hue-rotate(20deg) drop-shadow(0 0 10px #00BFFF);
-      transition: transform 0.2s ease, filter 0.2s ease;
-    }
-
-    .attached-blinkies a img:hover {
-      transform: scale(1.1) rotate(3deg);
-      filter: hue-rotate(60deg) drop-shadow(0 0 20px #00BFFF);
     }
 
     .attached-blinkies::after {
       content: "NOUS NE SOMMES PAS DES SCRIPT KIDDIES, MAIS DE VRAI LÉGENDES";
       display: block;
-      color: #00BFFF;
+      color: #4da6ff; /* Bleu */
       font-size: 12px;
       margin-top: 3px;
       font-family: monospace;
       text-align: center;
-      text-shadow: 0 0 5px #00BFFF;
     }
 
     footer {
       padding: 20px;
-      background-color: #150000;
-      border-top: 2px dashed #00BFFF;
+      background-color: #111;
+      border-top: 2px dashed #4da6ff; /* Bleu */
       font-size: 14px;
       text-align: center;
-      box-shadow: 0 0 10px #00BFFF;
-      color: white;
     }
 
     .footer-image {
@@ -122,7 +103,6 @@
       height: 30px;
       image-rendering: pixelated;
       cursor: pointer;
-      filter: hue-rotate(30deg) drop-shadow(0 0 10px #00BFFF);
     }
 
     #bsod {
@@ -131,8 +111,8 @@
       top: 0; left: 0;
       width: 100vw;
       height: 100vh;
-      background: #111;
-      color: #FFF;
+      background: #0000AA;
+      color: white;
       font-family: monospace;
       font-size: 16px;
       padding: 40px;
@@ -141,14 +121,12 @@
       user-select: none;
       cursor: pointer;
       white-space: pre-wrap;
-      text-shadow: 0 0 10px #00BFFF;
     }
 
     /* 🔧 Styles pour l’onglet Soutien */
     .support-item {
       margin: 20px 0;
       font-size: 16px;
-      color: #00BFFF;
     }
     .support-item img {
       width: 30px;
@@ -156,12 +134,23 @@
       vertical-align: middle;
       margin-right: 10px;
       image-rendering: pixelated;
-      filter: hue-rotate(40deg) drop-shadow(0 0 10px #00BFFF);
     }
     .support-item span {
-      color: #00BFFF;
+      color: #4da6ff; /* Bleu */
       font-weight: bold;
     }
+
+.xmas-banner {
+  text-align: center;
+  margin: 20px 0; /* espace au-dessus et en-dessous */
+}
+
+.xmas-banner img {
+  max-width: 100%;  /* s'adapte à la largeur de la page */
+  height: auto;
+  image-rendering: pixelated;
+}
+
   </style>
 </head>
 <body>
@@ -171,24 +160,34 @@
   <button class="tab-button active" onclick="showTab('accueil')">Accueil</button>
   <button class="tab-button" onclick="showTab('onglet3')">Rejoins-nous</button>
   <button class="tab-button" onclick="showTab('shop')">Shop</button>
+  <button class="tab-button" onclick="showTab('Bot')">Bot Discord</button>
   <button class="tab-button" onclick="showTab('soutien')">Soutien</button>
 </nav>
+
+<!-- Bandera Noël sous les onglets -->
+<div class="xmas-banner">
+  <img src="XMAS.png" alt="Banderole Noël">
+</div>
 
 <!-- Contenus des onglets -->
 <div id="shop" class="tab-content">
   <h2>Shop</h2>
-    <p style="color: #00BFFF; font-weight: bold;">
+    <p style="color: #4da6ff; font-weight: bold;">
     Pour payer, il faut aller sur notre Discord 💸
-    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#00BFFF; text-decoration: underline;">Via ce Lien</a></p>
-        <p style="color: #00BFFF; font-weight: bold;">
+    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#4da6ff; text-decoration: underline;">Via ce Lien</a></p>
+        <p style="color: #4da6ff; font-weight: bold;">
     et crée un ticket en incluant l'id de l'article que vous voulez acheter</p>
   </p>
-  <div class="shop-item" style="width: 160px; background-color: #150000; padding: 10px; border: 2px dashed #00BFFF; text-align: center; box-shadow: 0 0 10px #00BFFF;">
-    <img src="a1.jpg" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
-    <p style="margin: 0; font-weight: bold;">GUIDE ULTIME POUR ÊTRE UN TROLLER</p>
-    <p style="margin: 0;">Prix : 1.80€</p>
+ <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #4da6ff; text-align: center;">
+    <img src="a2.gif" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
+    <p style="margin: 0; font-weight: bold;">Service Personnalisé</p>
+    <p style="margin: 0;">Prix : 1.00€ - 8.00€</p>
+    <p style="margin: 0;">Le prix se négocira en fonction du service demandé</p>
     <p style="margin: 0;">ID : 1</p>
 </div>
+</div>
+    <!-- Tu peux dupliquer cette div pour ajouter d'autres articles -->
+  </div>
 </div>
 
   <!-- Titre blinkie -->
@@ -227,7 +226,7 @@
     <p>T’es fou ? T’as des skills ?
     <p>Bienvenue.
     <p>Sinon, trace ta route.
-    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#00BFFF; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
+    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#4da6ff; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
   </div>
 
   <div id="soutien" class="tab-content">
@@ -238,7 +237,7 @@
     </div>
     <div class="support-item">
       <img src="ethereum.jpg" alt="Ethereum">
-      <span>Ethereum :</span> 0xC0fFa99437a9Ed5eED3388e2a5063055141E2762
+      <span>Ethereum :</span> 0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40
     </div>
     <div class="support-item">
       <img src="solana.jpg" alt="Solana">
@@ -246,20 +245,24 @@
     </div>
   </div>
 
-  <!-- Pied de page -->
-  <footer>
-    © 2025 - 2025 EXE - All Rights Reserved.
-    <div class="footer-image">
-      <img src="debian-hwn.gif" alt="Debian" id="debian-logo">
-    </div>
-  </footer>
+  <div id="Bot" class="tab-content">
+    <h2>Bot Discord</h2>
+    <p>En construction... 
+  </div>
+
+<footer>
+  © 2025 - 2025 EXE - All Rights Reserved.
+  <div class="footer-image">
+    <img src="debian-hwn.gif" alt="Debian" id="debian-logo">
+  </div>
+</footer>
 
   <!-- Faux BSOD -->
   <div id="bsod">
 *** STOP: 0x000000D3 (0x00000000, 0x00000002, 0x00000001, 0xF86B1234)
 DRIVER_IRQL_NOT_LESS_OR_EQUAL
 
-*** Address F86B1234 base at F86B0000, DateStamp 3dd991eb - debian.sys
+*** Address F86B1234 base at F86B0000, DateStamp 3dd991eb - xmas.sys
 
 If this is the first time you've seen this Stop error screen,
 restart your computer. If this screen appears again, follow
@@ -289,8 +292,7 @@ Press ESC or click anywhere to exit this screen.
       btns.forEach(btn => {
         if ((tabId === 'accueil' && btn.textContent === 'Accueil') ||
             (tabId === 'onglet3' && btn.textContent === 'Rejoins-nous') ||
-            (tabId === 'soutien' && btn.textContent === 'Soutien') ||
-            (tabId === 'shop' && btn.textContent === 'Shop')) {
+            (tabId === 'soutien' && btn.textContent === 'Soutien')) {
           btn.classList.add('active');
         }
       });
@@ -316,3 +318,24 @@ Press ESC or click anywhere to exit this screen.
 
 </body>
 </html>
+
+  <!-- Ceci ne s'affichera pas. Structure du Shop -->
+     <!--
+  <div class="shop-container" style="display: flex; overflow-x: auto; gap: 20px; padding: 20px;">
+    -->
+
+  <!-- Ceci ne s'affichera pas. Shop Item -->
+  <!--
+  <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #4da6ff; text-align: center;">
+    <img src="a1.jpg" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
+    <p style="margin: 0; font-weight: bold;">Nom</p>
+    <p style="margin: 0;">Prix : 0.00€</p>
+    <p style="margin: 0;">ID : 0</p>
+</div>
+    -->
+
+      <!-- Ceci ne s'affichera pas. Shop en construction -->
+  <!--
+    <p>🚧 Le Shop est en cours de construction 🚧</p>
+</div>
+    -->
