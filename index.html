@@ -151,6 +151,28 @@ nav {
   image-rendering: pixelated;
 }
 
+/* ❄ Neige en background */
+.snowflake {
+  position: fixed;
+  top: -10px;
+  color: white;
+  font-size: 10px;
+  pointer-events: none;
+  animation: fallSnow linear infinite;
+  z-index: 0; /* derrière TOUT */
+}
+
+@keyframes fallSnow {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0.3;
+  }
+}
+
   </style>
 </head>
 <body>
@@ -315,6 +337,28 @@ Press ESC or click anywhere to exit this screen.
       bsod.style.display = 'none';
     });
   </script>
+
+<script>
+function createSnowflake() {
+  const snow = document.createElement('div');
+  snow.classList.add('snowflake');
+  snow.textContent = '❄';
+
+  const size = Math.random() * 10 + 5;
+  snow.style.fontSize = size + 'px';
+
+  snow.style.left = Math.random() * window.innerWidth + 'px';
+  snow.style.animationDuration = (5 + Math.random() * 5) + 's';
+
+  document.body.appendChild(snow);
+
+  setTimeout(() => {
+    snow.remove();
+  }, 10000);
+}
+
+setInterval(createSnowflake, 150);
+</script>
 
 </body>
 </html>
