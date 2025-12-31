@@ -375,6 +375,8 @@ function createSnowflake() {
 }
 
 setInterval(createSnowflake, 150);
+
+document.addEventListener('contextmenu', event => event.preventDefault());
 </script>
 
 </body>
