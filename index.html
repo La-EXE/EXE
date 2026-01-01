@@ -20,26 +20,26 @@ nav {
   justify-content: center;
   align-items: center; /* centre les boutons verticalement */
   background-color: #111;
-  border-bottom: none; /* supprime la ligne bleue */
+  border-bottom: 2px dashed #33FF00;
 }
 
 
     .tab-button {
       padding: 15px 25px;
-      color: #4da6ff; /* Bleu */
+      color: #33FF00; /* Bleu */
       background: none;
       border: none;
       font-size: 16px;
       cursor: pointer;
       font-weight: bold;
-      text-shadow: 0 0 5px #4da6ff; /* Glow bleu */
+      text-shadow: 0 0 5px #33FF00; /* Glow violet */
     }
 
     .tab-button:hover,
     .tab-button.active {
       background-color: #222;
-      color: #FF0000; /* Rouge */
-      text-shadow: 0 0 8px #FF0000; /* Glow rouge */
+      color: #FF00FF; /* violet */
+      text-shadow: 0 0 8px #FF00FF; /* Glow violet */
     }
 
     .tab-content {
@@ -80,7 +80,7 @@ nav {
     .attached-blinkies::after {
       content: "NOUS NE SOMMES PAS DES SCRIPT KIDDIES, MAIS DE VRAI LÉGENDES";
       display: block;
-      color: #4da6ff; /* Bleu */
+      color: rgb(51, 255, 0);
       font-size: 12px;
       margin-top: 3px;
       font-family: monospace;
@@ -90,7 +90,7 @@ nav {
     footer {
       padding: 20px;
       background-color: #111;
-      border-top: 2px dashed #4da6ff; /* Bleu */
+      border-top: 2px dashed #33FF00; /* vert */
       font-size: 14px;
       text-align: center;
     }
@@ -136,7 +136,7 @@ nav {
       image-rendering: pixelated;
     }
     .support-item span {
-      color: #4da6ff; /* Bleu */
+      color: #33FF00; /* Bleu */
       font-weight: bold;
     }
 
@@ -149,28 +149,6 @@ nav {
   max-width: 100%;  /* s'adapte à la largeur de la page */
   height: auto;
   image-rendering: pixelated;
-}
-
-/* ❄ Neige en background */
-.snowflake {
-  position: fixed;
-  top: -10px;
-  color: white;
-  font-size: 10px;
-  pointer-events: none;
-  animation: fallSnow linear infinite;
-  z-index: 0; /* derrière TOUT */
-}
-
-@keyframes fallSnow {
-  0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(110vh) rotate(360deg);
-    opacity: 0.3;
-  }
 }
 
   </style>
@@ -188,25 +166,16 @@ nav {
   <button class="tab-button" onclick="showTab('soutien')">Soutien</button>
 </nav>
 
-<!-- Bandera Noël sous les onglets -->
-<div class="xmas-banner">
-  <img src="XMAS.png" alt="Banderole Noël">
-</div>
-
-<div style="text-align:center; color:#FF0000; font-size:32px; font-weight:bold; margin-top:-40px;">
-  JOYEUSES FÊTES
-</div>
-
 <!-- Contenus des onglets -->
 <div id="shop" class="tab-content">
   <h2>Shop</h2>
-    <p style="color: #4da6ff; font-weight: bold;">
+    <p style="color: #33FF00; font-weight: bold;">
     Pour payer, il faut aller sur notre Discord 💸
-    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#4da6ff; text-decoration: underline;">Via ce Lien</a></p>
-        <p style="color: #4da6ff; font-weight: bold;">
+    <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">Via ce Lien</a></p>
+        <p style="color: #33FF00; font-weight: bold;">
     et crée un ticket en incluant l'id de l'article que vous voulez acheter</p>
   </p>
- <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #4da6ff; text-align: center;">
+  <div class="shop-item" style="width: 160px; background-color: #111; padding: 10px; border: 2px dashed #33FF00; text-align: center;">
     <img src="a2.gif" alt="Article 1" style="max-width: 80px; height: auto; display: block; margin: 0 auto 8px auto; object-fit: contain;">
     <p style="margin: 0; font-weight: bold;">Service Personnalisé</p>
     <p style="margin: 0;">Prix : 1.00€ - 8.00€</p>
@@ -220,19 +189,19 @@ nav {
 
   <!-- Titre blinkie -->
   <div class="blinkie-title">
-    <img src="exe-hwn.gif" alt="EXE blinkie">
+    <img src="exe.gif" alt="EXE blinkie">
   </div>
 
   <!-- Blinkies attachés cliquables -->
   <div class="attached-blinkies">
     <a href="https://guns.lol/rtsk.exe" target="_blank">
-      <img src="r-hwn.gif" alt="r">
+      <img src="r.gif" alt="r">
     </a>
     <a href="https://guns.lol/noneed2know/" target="_blank">
-      <img src="n-hwn.gif" alt="n">
+      <img src="n.gif" alt="n">
     </a>
     <a href="https://guns.lol/kinito.exe" target="_blank">
-      <img src="k-hwn.gif" alt="k">
+      <img src="k.gif" alt="k">
     </a>
   </div>
 
@@ -250,7 +219,7 @@ nav {
     <p>T’es fou ? T’as des skills ?
     <p>Bienvenue.
     <p>Sinon, trace ta route.
-    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#4da6ff; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
+    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
   </div>
 
   <div id="soutien" class="tab-content">
@@ -274,42 +243,31 @@ nav {
     <p>Tu veut des cheats ?
     <p>T'es au bon endroit !
     <p>ça se passe sur Discord
-    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#4da6ff; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
+    <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">https://discord.gg/QhYcGtTykJ</a></p>
     <p>Disponible en 2026
   </div>
 
 <footer>
-  © 2025 - 2025 EXE - All Rights Reserved.
+  © 2025 - 2026 EXE - All Rights Reserved.
   <div class="footer-image">
-    <img src="debian-hwn.gif" alt="Debian" id="debian-logo">
+    <img src="debian.gif" alt="Debian" id="debian-logo">
   </div>
 </footer>
 
   <!-- Faux BSOD -->
   <div id="bsod">
 *** STOP: 0x000000D3 (0x00000000, 0x00000002, 0x00000001, 0xF86B1234)
-WANTED_TO_WISH_YOU_A_MERRY_XMAS
+DRIVER_IRQL_NOT_LESS_OR_EQUAL
 
-Joyeux Noël
-Merry Christmas
-Feliz Navidad
-Feliz Natal
-圣诞快乐
-عيد ميلاد سعيد
-क्रिसमस की बधाई
-শুভ বড়দিন
-کرسمس مبارک
-С Рождеством
-メリークリスマス
-메리 크리스마스
-Selamat Natal
-Giáng sinh vui vẻ
-Krismasi Njema
-Frohe Weihnachten
-Buon Natale
-Wesołych Świąt
-Mutlu Noeller
-Nadolig Llawen
+*** Address F86B1234 base at F86B0000, DateStamp 3dd991eb - debian.sys
+
+If this is the first time you've seen this Stop error screen,
+restart your computer. If this screen appears again, follow
+these steps:
+
+Check to make sure any new hardware or software is properly installed.
+If this is a new installation, ask your hardware or software manufacturer
+for any Windows updates you might need.
 
 Press ESC or click anywhere to exit this screen.
   </div>
@@ -353,28 +311,6 @@ Press ESC or click anywhere to exit this screen.
     bsod.addEventListener('click', () => {
       bsod.style.display = 'none';
     });
-  </script>
-
-<script>
-function createSnowflake() {
-  const snow = document.createElement('div');
-  snow.classList.add('snowflake');
-  snow.textContent = '❄';
-
-  const size = Math.random() * 10 + 5;
-  snow.style.fontSize = size + 'px';
-
-  snow.style.left = Math.random() * window.innerWidth + 'px';
-  snow.style.animationDuration = (5 + Math.random() * 5) + 's';
-
-  document.body.appendChild(snow);
-
-  setTimeout(() => {
-    snow.remove();
-  }, 10000);
-}
-
-setInterval(createSnowflake, 150);
 
 document.addEventListener('contextmenu', event => event.preventDefault());
 
@@ -391,7 +327,7 @@ window.addEventListener('keydown', function(event) {
         event.preventDefault();
     }
 });   
-</script>
+  </script>
 
 </body>
 </html>
@@ -416,3 +352,6 @@ window.addEventListener('keydown', function(event) {
     <p>🚧 Le Shop est en cours de construction 🚧</p>
 </div>
     -->
+
+
+/* Note : mode normal du site. plus de mode noël */
