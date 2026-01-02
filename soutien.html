@@ -298,6 +298,22 @@ function showTab(id) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
+
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+$(document).keydown(function (event) {
+    if (event.keyCode == 123) { // Prevent F12
+        return false;
+    } else if (event.ctrlKey && event.shiftKey && event.keyCode == 73) { // Prevent Ctrl+Shift+I        
+        return false;
+    }
+});
+
+window.addEventListener('keydown', function(event) {
+    if (event.code === 'F12') {
+        event.preventDefault();
+    }
+});   
 </script>
 
 </body>
