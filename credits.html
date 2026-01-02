@@ -263,6 +263,20 @@ function showTab(id) {
   document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
   document.getElementById(id).classList.add('active');
 }
+
+        // Redirige uniquement les mobiles
+        window.onload = function() {
+            const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+            
+            // Vérifie si c'est un appareil mobile
+            const isMobile = /android|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(userAgent);
+
+            if (isMobile) {
+                // Redirection vers le site mobile
+                window.location.href = "https://la-exe.github.io/EXE-Mobile/";
+            }
+            // Les utilisateurs PC restent sur le site principal
+        };
 </script>
 
 </body>
