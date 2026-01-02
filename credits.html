@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>EXE Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --green: #00ff00;
+      --green-soft: rgba(0,255,0,0.15);
+      --bg: #000000;
+      --accent: #33FF00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Courier New", monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--green);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 2px solid var(--green);
+    }
+
+    header .logo {
+      font-weight: bold;
+    }
+
+    header nav a {
+      color: var(--green);
+      text-decoration: none;
+      margin-left: 12px;
+      cursor: pointer;
+    }
+
+    header nav a.button {
+      padding: 4px 10px;
+      border: 1px solid var(--green);
+      border-radius: 4px;
+      background: var(--green);
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Main terminal */
+    .terminal {
+      margin: 0 20px 20px 20px;
+      border: 2px solid var(--green);
+      padding: 30px;
+      position: relative;
+      overflow-y: auto;
+      max-height: 70vh;
+      line-height: 1.6;
+      background: radial-gradient(circle at center, var(--green-soft), transparent 70%);
+    }
+
+    .binary {
+      position: absolute;
+      top: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      opacity: 0.6;
+    }
+
+    .binary.left { left: 10px; }
+    .binary.right { right: 10px; text-align: right; }
+
+    .title {
+      text-align: center;
+      font-size: clamp(48px, 10vw, 140px);
+      font-weight: bold;
+      letter-spacing: 1;
+      margin: 0;
+      text-shadow: 0 0 15px var(--green);
+    }
+
+    .ascii {
+      white-space: pre;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1;
+      opacity: 0.85;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    /* Tabs */
+    .tab-content {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Shop */
+    .shop-item {
+      width: 200px;
+      margin: 20px auto;
+      background: #111;
+      border: 2px dashed var(--accent);
+      padding: 15px;
+    }
+
+    /* Support */
+    .support-item {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .support-item img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      border-top: 2px solid var(--green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* BSOD */
+    #bsod {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0000AA;
+      color: white;
+      font-family: monospace;
+      padding: 40px;
+      z-index: 9999;
+      white-space: pre-wrap;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">La EXE</div>
+<nav>
+  / <a href="index.html">Accueil</a>
+  / <a href="rejoins.html">Rejoins-nous</a>
+  / <a href="shop.html">Shop</a>
+  / <a href="https://la-exe.github.io/EXE-bot/" target="_blank">Bot Discord</a>
+  / <a href="cheat.html">Cheat</a>
+  / <a href="soutien.html">Soutien</a>
+  / <a href="credits.html">Credits</a>
+</nav>
+</header>
+
+<div id="accueil" class="tab-content active">
+  <div class="terminal">
+
+
+
+    <div class="ascii">
+                                                                                                                                
+                                                                         dddddddd                                               
+        CCCCCCCCCCCCC                                                    d::::::d  iiii          tttt                           
+     CCC::::::::::::C                                                    d::::::d i::::i      ttt:::t                           
+   CC:::::::::::::::C                                                    d::::::d  iiii       t:::::t                           
+  C:::::CCCCCCCC::::C                                                    d:::::d              t:::::t                           
+ C:::::C       CCCCCCrrrrr   rrrrrrrrr       eeeeeeeeeeee        ddddddddd:::::d iiiiiiittttttt:::::ttttttt        ssssssssss   
+C:::::C              r::::rrr:::::::::r    ee::::::::::::ee    dd::::::::::::::d i:::::it:::::::::::::::::t      ss::::::::::s  
+C:::::C              r:::::::::::::::::r  e::::::eeeee:::::ee d::::::::::::::::d  i::::it:::::::::::::::::t    ss:::::::::::::s 
+C:::::C              rr::::::rrrrr::::::re::::::e     e:::::ed:::::::ddddd:::::d  i::::itttttt:::::::tttttt    s::::::ssss:::::s
+C:::::C               r:::::r     r:::::re:::::::eeeee::::::ed::::::d    d:::::d  i::::i      t:::::t           s:::::s  ssssss 
+C:::::C               r:::::r     rrrrrrre:::::::::::::::::e d:::::d     d:::::d  i::::i      t:::::t             s::::::s      
+C:::::C               r:::::r            e::::::eeeeeeeeeee  d:::::d     d:::::d  i::::i      t:::::t                s::::::s   
+ C:::::C       CCCCCC r:::::r            e:::::::e           d:::::d     d:::::d  i::::i      t:::::t    ttttttssssss   s:::::s 
+  C:::::CCCCCCCC::::C r:::::r            e::::::::e          d::::::ddddd::::::ddi::::::i     t::::::tttt:::::ts:::::ssss::::::s
+   CC:::::::::::::::C r:::::r             e::::::::eeeeeeee   d:::::::::::::::::di::::::i     tt::::::::::::::ts::::::::::::::s 
+     CCC::::::::::::C r:::::r              ee:::::::::::::e    d:::::::::ddd::::di::::::i       tt:::::::::::tt s:::::::::::ss  
+        CCCCCCCCCCCCC rrrrrrr                eeeeeeeeeeeeee     ddddddddd   dddddiiiiiiii         ttttttttttt    sssssssssss    
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+                                                                                                                                
+    </div>
+
+  <h2>Chefs</h2>
+  <p>RTSK - Créateur de la .EXE</p>
+  <p>N2K - Créateur site Web + discord + Gérent logistique</p>
+  <p>KINITO - Le rigolo et le soundborder</p>
+<br>
+  <h2>Membres Fidèles</h2>
+  <p>Louna.exe</p>
+  <p>Jerome.exe</p>
+  <p>Kiki.exe</p>
+<br>
+  <h2>  La exe est avant tout une famille et VOUS pouvez la rejoindre !</h2>
+  </div>
+</div>
+
+<div id="rejoins" class="tab-content"> class="tab-content active">
+  <h2>Rejoins-nous</h2>
+  <p>T’es fou ? T’as des skills ?</p>
+  <p>Bienvenue.</p>
+</div>
+
+<div id="rejoins" class="tab-content">
+  <h2>Rejoins-nous</h2>
+  <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank">Discord</a></p>
+</div>
+
+<div id="shop" class="tab-content">
+  <h2>Shop</h2>
+  <div class="shop-item">
+    <p><strong>Service Personnalisé</strong></p>
+    <p>Prix : 1€ - 8€</p>
+    <p>ID : 1</p>
+  </div>
+</div>
+
+<div id="cheat" class="tab-content">
+  <h2>Cheats</h2>
+  <p>Disponible bientôt – Discord only</p>
+</div>
+
+<div id="soutien" class="tab-content">
+  <h2>Soutenir la EXE</h2>
+  <div class="support-item">BTC : bc1qz87u4hr6pv8yzq96h6vjcutz3nrgw06gkdxzvw</div>
+  <div class="support-item">ETH : 0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40</div>
+</div>
+
+<footer>
+  <div>Bienvenue dans ma fête</div>
+  <div>© 2025 - 2026 EXE</div>
+</footer>
+
+
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>EXE Site</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --green: #00ff00;
+      --green-soft: rgba(0,255,0,0.15);
+      --bg: #000000;
+      --accent: #33FF00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Courier New", monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--green);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 2px solid var(--green);
+    }
+
+    header .logo {
+      font-weight: bold;
+    }
+
+    header nav a {
+      color: var(--green);
+      text-decoration: none;
+      margin-left: 12px;
+      cursor: pointer;
+    }
+
+    header nav a.button {
+      padding: 4px 10px;
+      border: 1px solid var(--green);
+      border-radius: 4px;
+      background: var(--green);
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Main terminal */
+    .terminal {
+      margin: 0 20px 20px 20px;
+      border: 2px solid var(--green);
+      padding: 30px;
+      position: relative;
+      overflow-y: auto;
+      max-height: 70vh;
+      line-height: 1.6;
+      background: radial-gradient(circle at center, var(--green-soft), transparent 70%);
+    }
+
+    .binary {
+      position: absolute;
+      top: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      opacity: 0.6;
+    }
+
+    .binary.left { left: 10px; }
+    .binary.right { right: 10px; text-align: right; }
+
+    .title {
+      text-align: center;
+      font-size: clamp(48px, 10vw, 140px);
+      font-weight: bold;
+      letter-spacing: 1;
+      margin: 0;
+      text-shadow: 0 0 15px var(--green);
+    }
+
+    .ascii {
+      white-space: pre;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1;
+      opacity: 0.85;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    /* Tabs */
+    .tab-content {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Shop */
+    .shop-item {
+      width: 200px;
+      margin: 20px auto;
+      background: #111;
+      border: 2px dashed var(--accent);
+      padding: 15px;
+    }
+
+    /* Support */
+    .support-item {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .support-item img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      border-top: 2px solid var(--green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* BSOD */
+    #bsod {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0000AA;
+      color: white;
+      font-family: monospace;
+      padding: 40px;
+      z-index: 9999;
+      white-space: pre-wrap;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">La EXE</div>
+<nav>
+  / <a href="index.html">Accueil</a>
+  / <a href="rejoins.html">Rejoins-nous</a>
+  / <a href="shop.html">Shop</a>
+  / <a href="https://la-exe.github.io/EXE-bot/" target="_blank">Bot Discord</a>
+  / <a href="cheat.html">Cheat</a>
+  / <a href="soutien.html">Soutien</a>
+</nav>
+</header>
+
+<div id="accueil" class="tab-content active">
+  <div class="terminal">
+
+
+
+    <div class="ascii">
+                                                                            
+                                                                            
+   SSSSSSSSSSSSSSS hhhhhhh                                                  
+ SS:::::::::::::::Sh:::::h                                                  
+S:::::SSSSSS::::::Sh:::::h                                                  
+S:::::S     SSSSSSSh:::::h                                                  
+S:::::S             h::::h hhhhh          ooooooooooo   ppppp   ppppppppp   
+S:::::S             h::::hh:::::hhh     oo:::::::::::oo p::::ppp:::::::::p  
+ S::::SSSS          h::::::::::::::hh  o:::::::::::::::op:::::::::::::::::p 
+  SS::::::SSSSS     h:::::::hhh::::::h o:::::ooooo:::::opp::::::ppppp::::::p
+    SSS::::::::SS   h::::::h   h::::::ho::::o     o::::o p:::::p     p:::::p
+       SSSSSS::::S  h:::::h     h:::::ho::::o     o::::o p:::::p     p:::::p
+            S:::::S h:::::h     h:::::ho::::o     o::::o p:::::p     p:::::p
+            S:::::S h:::::h     h:::::ho::::o     o::::o p:::::p    p::::::p
+SSSSSSS     S:::::S h:::::h     h:::::ho:::::ooooo:::::o p:::::ppppp:::::::p
+S::::::SSSSSS:::::S h:::::h     h:::::ho:::::::::::::::o p::::::::::::::::p 
+S:::::::::::::::SS  h:::::h     h:::::h oo:::::::::::oo  p::::::::::::::pp  
+ SSSSSSSSSSSSSSS    hhhhhhh     hhhhhhh   ooooooooooo    p::::::pppppppp    
+                                                         p:::::p            
+                                                         p:::::p            
+                                                        p:::::::p           
+                                                        p:::::::p           
+                                                        p:::::::p           
+                                                        ppppppppp           
+                                                                        
+    </div>
+    <p>Pour payer, il faut aller sur notre Discord 💸 <a href="https://discord.gg/QhYcGtTykJ" target="_blank" style="color:#33FF00; text-decoration: underline;">Via ce Lien</a></p>
+    <p>et crée un ticket en incluant l'id de l'article que vous voulez acheter</p>
+
+  <div class="shop-item" style="width:150px; margin:20px 0 20px 0; float:left;">
+    <img src="a2.gif" alt="Service Personnalisé" style="width:100%; margin-bottom:10px;">
+    <p><strong>Service Personnalisé</strong></p>
+    <p>Prix : 1.00€ - 8.00€</p>
+    <p>Le prix se négociera en fonction du service demandé</p>
+    <p>ID : 1</p>
+  </div>
+  </div>
+</div>
+
+<div id="rejoins" class="tab-content"> class="tab-content active">
+  <h2>Rejoins-nous</h2>
+  <p>T’es fou ? T’as des skills ?</p>
+  <p>Bienvenue.</p>
+</div>
+
+<div id="rejoins" class="tab-content">
+  <h2>Rejoins-nous</h2>
+  <p><a href="https://discord.gg/QhYcGtTykJ" target="_blank">Discord</a></p>
+</div>
+
+<div id="shop" class="tab-content">
+  <h2>Shop</h2>
+  <div class="shop-item">
+    <p><strong>Service Personnalisé</strong></p>
+    <p>Prix : 1€ - 8€</p>
+    <p>ID : 1</p>
+  </div>
+</div>
+
+<div id="cheat" class="tab-content">
+  <h2>Cheats</h2>
+  <p>Disponible bientôt – Discord only</p>
+</div>
+
+<div id="soutien" class="tab-content">
+  <h2>Soutenir la EXE</h2>
+  <div class="support-item">BTC : bc1qz87u4hr6pv8yzq96h6vjcutz3nrgw06gkdxzvw</div>
+  <div class="support-item">ETH : 0x4bb895c76738B4B9B42A86B9F55C0dD3aBb0CF40</div>
+</div>
+
+<footer>
+  <div>Bienvenue dans ma fête</div>
+  <div>© 2025 - 2026 EXE</div>
+</footer>
+
+
+
+<script>
+function showTab(id) {
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
