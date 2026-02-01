@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>HALL OF SHAME.EXE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --green: #00ff00;
+      --green-soft: rgba(0,255,0,0.15);
+      --bg: #000000;
+      --accent: #33FF00;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Courier New", monospace;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--green);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 2px solid var(--green);
+    }
+
+    header .logo {
+      font-weight: bold;
+    }
+
+    header nav a {
+      color: var(--green);
+      text-decoration: none;
+      margin-left: 12px;
+      cursor: pointer;
+    }
+
+    header nav a.button {
+      padding: 4px 10px;
+      border: 1px solid var(--green);
+      border-radius: 4px;
+      background: var(--green);
+      color: #000;
+      font-weight: bold;
+    }
+
+    /* Main terminal */
+    .terminal {
+      margin: 0 20px 20px 20px;
+      border: 2px solid var(--green);
+      padding: 30px;
+      position: relative;
+      overflow-y: auto;
+      max-height: 70vh;
+      line-height: 1.6;
+      background: radial-gradient(circle at center, var(--green-soft), transparent 70%);
+    }
+
+    .binary {
+      position: absolute;
+      top: 10px;
+      font-size: 14px;
+      line-height: 1.4;
+      opacity: 0.6;
+    }
+
+    .binary.left { left: 10px; }
+    .binary.right { right: 10px; text-align: right; }
+
+    .title {
+      text-align: center;
+      font-size: clamp(48px, 10vw, 140px);
+      font-weight: bold;
+      letter-spacing: 1;
+      margin: 0;
+      text-shadow: 0 0 15px var(--green);
+    }
+
+    .ascii {
+      white-space: pre;
+      text-align: center;
+      font-size: 10px;
+      line-height: 1;
+      opacity: 0.85;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    /* Tabs */
+    .tab-content {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    /* Shop */
+    .shop-item {
+      width: 200px;
+      margin: 20px auto;
+      background: #111;
+      border: 2px dashed var(--accent);
+      padding: 15px;
+    }
+
+    /* Support */
+    .support-item {
+      margin: 20px 0;
+      font-size: 16px;
+    }
+
+    .support-item img {
+      width: 30px;
+      vertical-align: middle;
+      margin-right: 10px;
+    }
+
+    /* Footer */
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      border-top: 2px solid var(--green);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 14px;
+    }
+
+    footer a { color: var(--green); text-decoration: none; }
+
+    /* BSOD */
+    #bsod {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: #0000AA;
+      color: white;
+      font-family: monospace;
+      padding: 40px;
+      z-index: 9999;
+      white-space: pre-wrap;
+      cursor: pointer;
+    }
+
+/* ===== MOBILE ONLY FIX ===== */
+@media (max-width: 768px) {
+
+  body {
+    overflow-x: hidden;
+  }
+
+  header {
+    flex-wrap: wrap;
+    text-align: center;
+    gap: 10px;
+  }
+
+  header nav {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 14px;
+  }
+
+  .terminal {
+    margin: 10px;
+    padding: 15px;
+    max-height: none;
+  }
+
+  .ascii {
+    font-size: 7px;
+    overflow-x: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .ascii {
+    font-size: 6px;
+  }
+}
+
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+  </style>
+</head>
+<body>
+
+<!-- AUDIO : correction minimale -->
+<audio
+  id="bg-music"
+  autoplay
+  loop
+  muted
+  preload="auto"
+  playsinline
+>
+  <source src="HOS.mp3" type="audio/mpeg">
+</audio>
+
+<header>
+  <div class="logo">La EXE</div>
+  <nav>
+    / <a href="index.html">Accueil</a>
+    / <a href="rejoins.html">Rejoins-nous</a>
+    / <a href="hallofshame.html">Hall of shame</a>
+    / <a href="shop.html">Shop</a>
+    / <a href="https://la-exe.github.io/EXE-bot/" target="_blank">Bot Discord</a>
+    / <a href="cheat.html">Cheat</a>
+    / <a href="soutien.html">Soutien</a>
+    / <a href="credits.html">Credits</a>
+  </nav>
+</header>
+
+<div id="accueil" class="tab-content active">
+  <div class="terminal">
+    <div class="ascii">
+                                                                                                                                  
+ mm    mm     mm     mm        mm                    mmmm    mmmmmmmm              mmmm    mm    mm     mm     mmm  mmm  mmmmmmmm 
+ ##    ##    ####    ##        ##                   ##""##   ##""""""            m#""""#   ##    ##    ####    ###  ###  ##"""""" 
+ ##    ##    ####    ##        ##                  ##    ##  ##                  ##m       ##    ##    ####    ########  ##       
+ ########   ##  ##   ##        ##                  ##    ##  #######              "####m   ########   ##  ##   ## ## ##  #######  
+ ##    ##   ######   ##        ##                  ##    ##  ##                       "##  ##    ##   ######   ## "" ##  ##       
+ ##    ##  m##  ##m  ##mmmmmm  ##mmmmmm             ##mm##   ##                  #mmmmm#"  ##    ##  m##  ##m  ##    ##  ##mmmmmm 
+ ""    ""  ""    ""  """"""""  """"""""              """"    ""                   """""    ""    ""  ""    ""  ""    ""  """""""" 
+                                                                                                                                  
+                                                                                                                                           
+    </div>
+    <p>Toutes les personnes que on a bz</p>
+    <p>(clic pour musique)</p>
+
+  <div class="shop-item" style="width:150px; margin: 20px 10px 20px 0; float:left;">
+    <img src="moustache.jpg" alt="moustache2" style="width:100%; margin-bottom:10px;">
+    <p><strong>Moustache2</strong></p>
+    <p>insulte un pote + fait un peu trop le fou et se prends pour "le famous"</p>
+  </div>
+  <div class="shop-item" style="width:150px; margin: 20px 10px 20px 0; float:left;">
+    <img src="chorizo.png" alt="Chorizo" style="width:100%; margin-bottom:10px;">
+    <p><strong>Chorizo</strong></p>
+    <p>n#des alors qu'elle est m1neur + men7ce de post le p7f d'un mec</p>
+  </div>
+  <div class="shop-item" style="width:150px; margin: 20px 10px 20px 0; float:left;">
+    <img src="ven1.jpg" alt="VEN1" style="width:100%; margin-bottom:10px;">
+    <p><strong>VEN1</strong></p>
+    <p>Clc a des collègues + 3 PIZZA</p>
+  </div>
+  </div>
+</div>
+
+<footer>
+  <div>Bienvenue dans ma fête</div>
+  <div>© 2025 - 2026 EXE</div>
+</footer>
+
+<script>
+const audio = document.getElementById("bg-music");
+audio.volume = 0.35;
+
+function unlockAndPlay() {
+  audio.muted = false;
+  audio.load(); // IMPORTANT : force le reload après unmute
+
+  const playPromise = audio.play();
+  if (playPromise !== undefined) {
+    playPromise.catch(() => {
+      setTimeout(() => audio.play(), 100);
+    });
+  }
+}
+
+['click', 'touchstart', 'keydown', 'pointerdown'].forEach(evt => {
+  document.addEventListener(evt, unlockAndPlay, { once: true });
+});
+
+console.log("Interaction requise pour activer le son.");
+</script>
+
+</body>
+</html>
